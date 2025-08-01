@@ -62,6 +62,9 @@
     outline: none;
     box-sizing: border-box;
     text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   #inputNome:focus {
     background: #003300;
@@ -112,7 +115,7 @@
       <input
         type="text"
         id="inputNome"
-        placeholder="Digite o nome para ligar"
+        placeholder="Digite um nome para L-"
         maxlength="20"
         pattern="[A-Za-zÀ-ÿ ]+"
         title="Apenas letras e espaços"
@@ -152,7 +155,7 @@
 
       // Após 3 segundos, mostrar "Em linha" e botão desligar
       setTimeout(() => {
-        tela.textContent = `Em linha com "${nome}"`;
+        tela.textContent = `Em linha: "${nome}"`;
         btnDesligar.style.display = 'inline-block';
       }, 3000);
     });
