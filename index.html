@@ -143,6 +143,12 @@
     const btnDesligar = document.getElementById('btnDesligar');
     const tela = document.getElementById('tela');
 
+    inputNome.addEventListener('keydown', (e) => {
+      if (e.key === ' ') {
+        e.preventDefault(); // Bloqueia espaços completamente
+      }
+    });
+
     inputNome.addEventListener('input', () => {
       inputNome.value = inputNome.value.replace(/\\s/g, '');
       const valor = inputNome.value.trim();
